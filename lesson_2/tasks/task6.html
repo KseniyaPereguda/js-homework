@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style.css">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 6</h1>
+	<p>З клавіатури вводяться вартість товару та кількість одиниць 3 товарів. Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек (як у супермаркеті) використовуючи елементи розмітки.</p>
+	<script>
+		//ввод необходимых данных
+		let costFirstItem = parseFloat(prompt('Введите стоимость первого товара'));
+		let amountFirstItem = parseFloat(prompt('Введите количество первого товара'))
+		let costSecondItem = parseFloat(prompt('Введите стоимость второго товара'));
+		let amountSecondItem = parseFloat(prompt('Введите количество второго товара'))
+		let costThirdItem = parseFloat(prompt('Введите стоимость третьего товара'));
+		let amountThirdItem = parseFloat(prompt('Введите количество третьего товара'))
+		//находим результат
+		let totalCostFirstItem = costFirstItem * amountFirstItem;
+		let totalCostSecondItem = costSecondItem * amountSecondItem;
+		let totalCostThirdItem = costThirdItem * amountThirdItem;
+		let totalCost = totalCostFirstItem + totalCostSecondItem + totalCostThirdItem;
+		//вывод результа
+		document.write(`
+		<table>
+			<tr>
+				<th>Стоимость</th>
+				<th>Количество</th>
+				<th>Итоговая стоимость</th>
+			</tr>
+			<tr>
+				<td>${costFirstItem.toFixed(2)}</td>
+				<td>${amountFirstItem.toFixed(2)}</td>
+				<td>${totalCostFirstItem.toFixed(2)}</td>
+			</tr>
+			<tr>
+				<td>${costSecondItem.toFixed(2)}</td>
+				<td>${amountSecondItem.toFixed(2)}</td>
+				<td>${totalCostSecondItem.toFixed(2)}</td>
+			</tr>
+			<tr>
+				<td>${costThirdItem.toFixed(2)}</td>
+				<td>${amountThirdItem.toFixed(2)}</td>
+				<td>${totalCostThirdItem.toFixed(2)}</td>
+			</tr>
+		</table>
+		Всего: ${totalCost.toFixed(2)}
+		`);
+	</script>
+</body>
+</html>
