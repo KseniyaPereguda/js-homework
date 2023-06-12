@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style.css">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Задача 7</h1>
+	<p>З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься</p>
+	<script>
+		//ввод необходимых данных
+		let monthNumber = parseInt(prompt('Введите номер месяца'));
+		let season;
+		//находим результат 
+		switch (monthNumber) {
+			case 1: 
+			case 2: 
+			case 12: 
+				season = "Зима"
+				break;
+			case 3: 
+			case 4: 
+			case 5: 
+			season = "Весна"
+				break;
+			case 6: 
+			case 7: 
+			case 8: 
+			season = "Лето"
+				break;
+			case 9: 
+			case 10: 
+			case 11: 
+			season = "Осень"
+				break;
+			default: season = "Неверное значение"
+				break;
+		}
+		//вывод результата
+		document.write(season);
+	</script>
+</body>
+</html>
