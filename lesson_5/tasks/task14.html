@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Задача 14</h1>
+<p>Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач поступово вводить суму грошей до тих пір, поки суми не буде достатньо для оплати товарів (кожного разу користувачу повідомляють, яку ще суму потрібно ввести).</p>
+<script>
+    let sum = 10 + Math.floor(Math.random() * (100 - 10 + 1));
+    alert(`Вам необходимо заплатить ${sum} $`);
+    let userMoney = 0;
+    while (userMoney !== sum) {
+        userMoney = prompt('Введите сумму для оплаты');
+        let restOfMoney = sum - userMoney;
+        sum -= userMoney;
+        if (restOfMoney > 0) {
+            alert(`Осталось заплатить ${restOfMoney}`);
+        }
+        if (sum <= 0) {
+            alert('Спасибо за покупку!')
+            break;
+        }
+    }
+</script>
+</body>
+</html>
