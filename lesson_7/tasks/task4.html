@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Задача 4</h1>
+<p>Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька результатів: кількість парних, кількість
+    додатних, кількість більших за 100.</p>
+<script>
+    function calc(num1, num2, num3) {
+        let even = 0;
+        if (num1 % 2 === 0) {
+            even++;
+        }
+        if (num2 % 2 === 0) {
+            even++;
+        }
+        if (num3 % 2 === 0) {
+            even++;
+        }
+        document.write(`Количество четных чисел - ${even} <br>`);
+        let positive = 0;
+        if (num1 > 0) {
+          positive++;
+        }
+        if (num2 > 0) {
+          positive++;
+        }
+        if (num3 > 0) {
+          positive++;
+        }
+        document.write(`Количество положительных чисел - ${positive} <br>`);
+        let more100 = 0;
+        if (num1 > 100) {
+          more100++;
+        }
+        if (num2 > 100) {
+          more100++;
+        }
+        if (num3 > 100) {
+          more100++;
+        }
+        document.write(`Количество чисел больше 100 - ${more100}`);
+
+    }
+    calc(118, -8, 66);
+</script>
+</body>
+</html>

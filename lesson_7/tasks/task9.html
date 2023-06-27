@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Задача 9</h1>
+<p> Дано покази температур (довільна кількість). Розробити функцію, яка дозволить підрахувати кількість від’ємних
+    показів температури.</p>
+<script>
+    function negative(num1, num2, num3, num4, num5) {
+        let count = 0;
+        if (num1 < 0) {
+            count++
+        }
+        if (num2 < 0) {
+            count++
+        }
+        if (num3 < 0) {
+            count++
+        }
+        if (num4 < 0) {
+            count++
+        }
+        if (num5 < 0) {
+            count++
+        }
+        return count;
+    }
+
+    document.write(`Количество отрицательных значений - ${negative(4, 7, -9, 2, -8)}`)
+</script>
+</body>
+</html>
