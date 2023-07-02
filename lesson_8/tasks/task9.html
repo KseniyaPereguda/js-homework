@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Задача 9</h1>
+<p>Морський бій. Користувач вводить кількість клітинок одновимірного масиву та кількість одиночних кораблів. Комп’ютер
+    довільно розміщує ці одиночні кораблі у масиві по один у клітинці (якщо у клітинці 0, то клітинка пуста, якщо 1 – то
+    це означає, що там є корабель. Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих пір, поки
+    не будуть потоплені усі кораблі.
+</p>
+<script>
+    let cellNumber = parseInt(prompt('Введите количество ячеек'));
+    let shipNumber = parseInt(prompt('Введите количество кораблей'));
+
+    let field = new Array(cellNumber);
+    field.fill(0);
+    fillTable(shipNumber, field);
+
+    let numberOfHits = 0;
+    while (numberOfHits < shipNumber) {
+        let userCell = parseInt(prompt('Введите номер ячейки'));
+        if (field[userCell - 1] === 1) {
+            alert('Вы попали');
+            field[userCell - 1] = 0;
+            numberOfHits++;
+        } else {
+            alert('Мимо')
+        }
+    }
+
+    function fillTable(shipNumber, field) {
+        for (let i = 0; i < shipNumber; i++) {
+            let generateNumber = true;
+            while (generateNumber) {
+                let randomPosition = Math.floor(Math.random() * (cellNumber + 1));
+                if (field[randomPosition] === 0) {
+                    field[randomPosition] = 1;
+                    generateNumber = false;
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Document</title>
+</head>
+<body>
+<h1>Задача 7</h1>
+<p>Дано послідовність платіжок протягом року. Знайти сумарну кількість грошей за:
+  за весь рік;
+  у першій половині року;
+  у другій половині року;
+  за літо;
+  за ІІ квартал;
+  за парні місяці (з парними номерами);
+  за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+</p>
+<script>
+  function allMoneyPerYear (moneyPerMonth) {
+    let sum = 0;
+    for (let value of moneyPerMonth) {
+      sum += value;
+    }
+    return sum;
+  }
+  function moneyForTheFirstHalfOfTheYear (moneyPerMonth) {
+    let sum = 0;
+    for (let i = 0; i < 6; i++) {
+      sum += moneyPerMonth[i];
+    }
+    return sum;
+  }
+  function moneyForTheSecondHalfOfTheYear (moneyPerMonth) {
+    let sum = 0;
+    for (let i = 6; i < 12; i++) {
+      sum += moneyPerMonth[i];
+    }
+    return sum;
+  }
+  function moneyForTheSummer (moneyPerMonth) {
+    let sum = 0;
+    for (let i = 5; i < 8; i++) {
+      sum += moneyPerMonth[i];
+    }
+    return sum;
+  }
+  function moneyForTheSecondQuarter (moneyPerMonth) {
+    let sum = 0;
+    for (let i = 3; i < 6; i++) {
+      sum += moneyPerMonth[i];
+    }
+    return sum;
+  }
+  function moneyForTheEvenMonth (moneyPerMonth) {
+    let sum = 0;
+    for (let i = 1; i < 12; i=i+2) {
+      sum += moneyPerMonth[i];
+    }
+    return sum;
+  }
+  function moneyForTheMonthFromWhichTheSeasonStarts (moneyPerMonth) {
+    let sum = 0;
+    for (let i = 2; i < 12; i=i+3) {
+      sum += moneyPerMonth[i];
+    }
+    return sum;
+  }
+  let moneyPerMonth = [218, 315, 267, 309, 199, 321, 289, 304, 206, 270, 265, 310];
+  document.write(`Количество денег за весь год - ${allMoneyPerYear(moneyPerMonth)}$`);
+  document.write('<br>');
+  document.write(`Количество денег за первую половину года - ${moneyForTheFirstHalfOfTheYear(moneyPerMonth)}$`);
+  document.write('<br>');
+  document.write(`Количество денег за вторую половину года - ${moneyForTheSecondHalfOfTheYear(moneyPerMonth)}$`);
+  document.write('<br>');
+  document.write(`Количество денег за лето - ${moneyForTheSummer(moneyPerMonth)}$`);
+  document.write('<br>');
+  document.write(`Количество денег за второй квартал - ${moneyForTheSecondQuarter(moneyPerMonth)}$`);
+  document.write('<br>');
+  document.write(`Количество денег за четные месяцы - ${moneyForTheEvenMonth(moneyPerMonth)}$`);
+  document.write('<br>');
+  document.write(`Количество денег за месяцы, с которых начинается сезон - ${moneyForTheMonthFromWhichTheSeasonStarts(moneyPerMonth)}$`);
+  document.write('<br>');
+
+</script>
+</body>
+</html>

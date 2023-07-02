@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Задача 2</h1>
+<p> Дано масив, який зберігає кількість відвідувачів магазину протягом тижня. Вивести на екран:
+    номери днів, протягом яких кількість відвідувачів була меншою за 20;
+    номери днів, коли кількість відвідувачів була мінімальною;
+    номери днів, коли кількість відвідувачів була мінімальною;
+    загальну кількість клієнтів у робочі дні та окремо загальну кількість днів на вихідних.
+</p>
+<script>
+    function writeDaysWithLessThan20Visitors (visitorsByDays) {
+        document.write(`Дни, в которые количество посетителей меньше 20: `);
+        for (let i = 0; i < visitorsByDays.length; i++) {
+            if (visitorsByDays[i] < 20) {
+                document.write(`${i + 1}; `);
+            }
+        }
+    }
+    function minCount(visitorsByDays) {
+        let min = visitorsByDays[0];
+        for (let i = 0; i < visitorsByDays.length; i++) {
+            if (min > visitorsByDays[i]) {
+                min = visitorsByDays[i];
+            }
+        }
+        return min;
+    }
+    function maxCount(visitorsByDays) {
+        let max = visitorsByDays[0];
+        for (let i = 0; i < visitorsByDays.length; i++) {
+            if (max < visitorsByDays[i]) {
+                max = visitorsByDays[i];
+            }
+        }
+        return max;
+    }
+    function visitorsInWorkingDays(visitorsByDays) {
+        let sum = 0;
+        for (let i = 0; i < 5; i++) {
+            sum += visitorsByDays[i];
+        }
+        return sum;
+
+    }
+    function visitorsInWeekend(visitorsByDays) {
+        let sum = 0;
+        for (let i = 5; i <= 6; i++) {
+            sum += visitorsByDays[i];
+        }
+        return sum;
+
+    }
+    let visitorsByDays = [23, 19, 57, 34, 48, 15, 65];
+    writeDaysWithLessThan20Visitors(visitorsByDays);
+    document.write('<br>');
+    document.write(`День, в который количество посетителей было минимальным: ${minCount(visitorsByDays)}`);
+    document.write('<br>');
+    document.write(`День, в который количество посетителей было максимальным: ${maxCount(visitorsByDays)}`);
+    document.write('<br>');
+    document.write(`Количество посетителей в рабочие дни: ${visitorsInWorkingDays(visitorsByDays)}`);
+    document.write('<br>');
+    document.write(`Количество посетителей в выходные дни: ${visitorsInWeekend(visitorsByDays)}`);
+</script>
+</body>
+</html>
