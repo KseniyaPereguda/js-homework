@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Задача 6</h1>
+<p>Дано масив елементів. Усі елементи, які більші за перший елемент помножити на 2</p>
+<script>
+    function ifMoreThanFirstMultiplyByTwo(arr) {
+        let fistNumber = arr[0]
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] > fistNumber) {
+                arr[i] *= 2;
+            }
+        }
+    }
+
+    let arr = [23, 56, 15, 89, 5, 34, 9, 67, 92, 5, 13, 57];
+    ifMoreThanFirstMultiplyByTwo(arr);
+    document.write(`${arr}`);
+</script>
+</body>
+</html>

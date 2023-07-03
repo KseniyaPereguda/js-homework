@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Document</title>
+</head>
+<body>
+<h1>Задача 7</h1>
+<p>Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за 1000 грн. дати 30% знижки.</p>
+<script>
+    function sale30IfPriceMoreThan1000(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > 1000) {
+                arr[i] = (arr[i] - arr[i] * 0.3).toFixed(2);
+            }
+        }
+    }
+
+    let arr = [2300, 560, 1569, 1789, 567, 2034, 2009, 607, 920, 1500, 1003, 507];
+    sale30IfPriceMoreThan1000(arr);
+    document.write(`${arr.join(', ')}`);
+
+</script>
+</body>
+</html>
