@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style.css">
+	<title>Document</title>
+</head>
+<body>
+<h1>Задача 1</h1>
+<p> Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000).Сформувати новий масив, у якому є тільки ті, що більші за 1000 грн.
+</p>
+<script>
+	let prices = [];
+	const period = 30;
+	for (let i = 0; i < period; i++) {
+		prices.push(1 + Math.floor(Math.random() * 10000))
+	}
+	document.write(`Цены за весь период: ${prices} <br>`);
+	let more1000 = prices.filter(price => price > 1000);
+	document.write(`Цены больше 1000: ${more1000}`);
+
+</script>
+</body>
+</html>

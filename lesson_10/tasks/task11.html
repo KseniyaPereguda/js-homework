@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Document</title>
+</head>
+<body>
+<h1>Задача 11</h1>
+<p>Дано історію цін на цінні папери за деякий період (згенерувати від 1 до 10000).Знайти індекс першої ціни, що більше за 1000
+</p>
+<script>
+	let prices = [];
+	const period = 30;
+	for (let i = 0; i < period; i++) {
+		prices.push(1 + Math.floor(Math.random() * 10000))
+	}
+	document.write(`Цены за весь период: ${prices} <br>`);
+	let indexFirstPriceMoreThan1000 = prices.findIndex((price) => price > 1000);
+	document.write(`Индекс первой цены, которая больше 1000: ${indexFirstPriceMoreThan1000}`);
+</script>
+</body>
+</html>
